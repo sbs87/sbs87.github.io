@@ -58,12 +58,12 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Navbar for large & medium screens -->
     <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
-            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+            <!-- <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
                 href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
-                    class="fa fa-bars"></i></a>
+                    class="fa fa-bars"></i></a> -->
             <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ice Breakers</a>
             <a href="tictactoe.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Tic-tac-toe</a>
             <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">About & Contact</a>
@@ -72,7 +72,8 @@
     </div>
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <div id="smallScreenNav" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
+        style="margin-top:46px">
         <a href="index.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Ice Breakers</a>
         <a href="tictactoe.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Tic-tac-toe</a>
     </div>
@@ -108,7 +109,7 @@
         <i class="fa fa-facebook-official w3-hover-opacity"></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
         <i class="fa fa-linkedin w3-hover-opacity"></i>
-        <p>Last updated Jan 9 2025 22:16</p>
+        <p>Last updated Jan 9 2025 22:28</p>
     </footer>
 
     <script>
@@ -150,6 +151,16 @@
             isPaused = false;
             clearTimeout(MarqueeTimeout); // Stop any existing timeout
         }
+
+        function myFunction() {
+            var x = document.getElementById("smallScreenNav");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show"; // Adds the 'w3-show' class to make it visible
+            } else {
+                x.className = x.className.replace(" w3-show", ""); // Removes the 'w3-show' class to hide it
+            }
+        }
+
     </script>
 </body>
 
