@@ -53,18 +53,28 @@
 </head>
 
 <body>
-
+    <!-- Navbar -->
     <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
-            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
-                href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
-                    class="fa fa-bars"></i></a>
-            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ice Breakers</a>
-            <a href="tictactoe.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Tic-tac-toe</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">About & Contact</a>
-
+            <!-- Hamburger icon (hidden on large screens) -->
+            <a href="javascript:void(0)"
+                class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+                onclick="toggleMenu()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <!-- Navigation Links -->
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ice breakers</a>
+            <a href="tictactoe.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Tic-tac-tow</a>
         </div>
     </div>
+
+    <!-- Navbar for Small Screens -->
+    <div id="mobileNav" class="w3-bar-block w3-black w3-hide">
+        <a href="index.html" class="w3-bar-item w3-button" onclick="toggleMenu()">Ice breakers</a>
+        <a href="tictactoe.html" class="w3-bar-item w3-button" onclick="toggleMenu()">Tic-tac-tow</a>
+    </div>
+
+    <!-- Tic tac toe board -->
     <div class="w3-content" id="game" style="max-width:2000px;margin-top:100px;margin-bottom:46px">
         <div class="cell" data-index="0"></div>
         <div class="cell" data-index="1"></div>
@@ -79,6 +89,20 @@
     <p id="message"></p>
     <button id="reset">Reset Game</button>
     <script src="tictactoe.js"></script>
+
+
+    <script>
+        // Toggle menu depending on screen size
+        function toggleMenu() {
+            var x = document.getElementById("mobileNav");
+            if (x.classList.contains("w3-hide")) {
+                x.classList.remove("w3-hide");
+            } else {
+                x.classList.add("w3-hide");
+            }
+        }
+
+    </script>
 </body>
 
 </html>

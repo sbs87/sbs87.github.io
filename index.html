@@ -57,21 +57,25 @@
 </head>
 
 <body>
-
-    <!-- Navbar for large & medium screens -->
+    <!-- Navbar -->
     <div class="w3-top">
-<!--  w3-hide -->
-    <!--  -->
-<!-- w3-hide  -->
-    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-    <div id="smallScreenNav" class="w3-bar-block w3-black  w3-hide-large w3-hide-medium w3-top"
-        style="margin-top:46px">
-        <!-- <a href="index.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Ice Breakers</a>
-        <a href="tictactoe.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Tic-tac-toe</a> -->
-
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large" >Ice Breakers</a>
-        <a href="tictactoe.html" class="w3-bar-item w3-button w3-padding-large">Tic-tac-toe</a>
+        <div class="w3-bar w3-black w3-card">
+            <!-- Hamburger icon (hidden on large screens) -->
+            <a href="javascript:void(0)"
+                class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+                onclick="toggleMenu()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <!-- Navigation Links -->
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ice breakers</a>
+            <a href="tictactoe.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Tic-tac-tow</a>
+        </div>
     </div>
+
+    <!-- Navbar for Small Screens -->
+    <div id="mobileNav" class="w3-bar-block w3-black w3-hide">
+        <a href="index.html" class="w3-bar-item w3-button" onclick="toggleMenu()">Ice breakers</a>
+        <a href="tictactoe.html" class="w3-bar-item w3-button" onclick="toggleMenu()">Tic-tac-tow</a>
     </div>
 
 
@@ -148,12 +152,13 @@
             clearTimeout(MarqueeTimeout); // Stop any existing timeout
         }
 
-        function myFunction() {
-            var x = document.getElementById("smallScreenNav");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show"; // Adds the 'w3-show' class to make it visible
+        // Toggle menu depending on screen size
+        function toggleMenu() {
+            var x = document.getElementById("mobileNav");
+            if (x.classList.contains("w3-hide")) {
+                x.classList.remove("w3-hide");
             } else {
-                x.className = x.className.replace(" w3-show", ""); // Removes the 'w3-show' class to hide it
+                x.classList.add("w3-hide");
             }
         }
 
