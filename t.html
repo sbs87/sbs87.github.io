@@ -1,101 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* styles.css */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    /* Style the navigation menu */
+.topnav {
+  overflow: hidden;
   background-color: #333;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
   color: white;
-  padding: 0.5rem 1rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  position: absolute;
-  top: 3rem;
-  right: 1rem;
-  background-color: #333;
-  border-radius: 5px;
-}
-
-.nav-links li {
-  margin: 0.5rem 0;
-}
-
-.nav-links a {
-  color: white;
+  padding: 14px 16px;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  font-size: 17px;
   display: block;
 }
 
-.menu-toggle {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    background: none;
-  }
-  .nav-links li {
-    margin: 0 0.5rem;
-  }
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #04AA6D;
+  color: white;
 }
-
-
-  </style>
-  <title>Hamburger Menu</title>
+</style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="menu-toggle" id="menu-toggle">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">Logo</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
   <script>
-    // script.js
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-
-menuToggle.addEventListener('click', () => {
-  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-});
-
+    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
   </script>
+</div>
 </body>
 </html>
