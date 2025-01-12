@@ -45,29 +45,30 @@
         </div>
     </div>
     <div id="controls">
-        <button onclick="pauseMarquee()">Pause</button>
-        <button onclick="resumeMarquee()">Resume</button>
+        <button class="button button2" onclick="pauseMarquee()">Pause</button>
+        <button class="button button2" onclick="resumeMarquee()">Resume</button>
     </div>
-
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-        <p>Last updated Jan 10 2025 20:45x</p>
+        <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i> -->
+        <!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
+        <!-- <i class="fa fa-linkedin w3-hover-opacity"></i> -->
+        <a href="mailto:someone@example.com">
+            <i class="fa fa-solid fa-envelope w3-hover-opacity"></i> </a>
+        <!-- <i class="fa fa-solid fa-mountain-sun w3-hover-opacity"></i> -->
     </footer>
 
     <script src="scripts.js"></script>
     <script>
-         function myFunction() {
+        function myFunction() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
-              x.className += " responsive";
+                x.className += " responsive";
             } else {
-              x.className = "topnav";
+                x.className = "topnav";
             }
-          }
+        }
     </script>
 </body>
 
