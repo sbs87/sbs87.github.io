@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link ref="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="styles2.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,25 +56,14 @@
 
 <body>
     <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-black w3-card">
-            <!-- Hamburger icon (hidden on large screens) -->
-            <a href="javascript:void(0)"
-                class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
-                onclick="toggleMenu()" title="Toggle Navigation Menu">
-                <i class="fa fa-bars"></i>
-            </a>
-            <!-- Navigation Links -->
-            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ice breakers</a>
-            <a href="tictactoe.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Tic-tac-tow</a>
-        </div>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Icebreakers</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
 
-    <!-- Navbar for Small Screens -->
-    <div id="mobileNav" class="w3-bar-block w3-black w3-hide">
-        <a href="index.html" class="w3-bar-item w3-button" onclick="toggleMenu()">Ice breakers</a>
-        <a href="tictactoe.html" class="w3-bar-item w3-button" onclick="toggleMenu()">Tic-tac-tow</a>
-    </div>
 
     <!-- Tic tac toe board -->
     <div class="w3-content" id="game" style="max-width:2000px;margin-top:100px;margin-bottom:46px">
@@ -90,6 +80,7 @@
     <p id="message"></p>
     <button id="reset">Reset Game</button>
     <script src="tictactoe.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
