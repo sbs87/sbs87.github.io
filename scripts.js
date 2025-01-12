@@ -46,3 +46,12 @@
                 x.classList.add("w3-hide");
             }
         }
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+              x.className += " responsive";
+            } else {
+              x.className = "topnav";
+            }
+          }
