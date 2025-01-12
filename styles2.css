@@ -58,10 +58,11 @@ footer {
     color: black;
 }
 
-.topnav a.active {
+/* Re-add if we can figure this out. But this does not change with the active tab */
+/* .topnav a.active {
     background-color: #04AA6D;
     color: white;
-}
+} */
 
 .topnav .icon {
     display: none;
