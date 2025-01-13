@@ -1,42 +1,3 @@
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-let isPaused = false;
-let MarqueeTimeout;
-let timeout = 5000;
-Marquee();
-
-function Marquee() {
-
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-
-    myIndex++;
-
-
-    if (myIndex > x.length) { myIndex = 1 }
-    if (isPaused) {
-        return;
-    } else {
-        x[myIndex - 1].style.display = "block";
-
-    }
-    MarqueeTimeout = setTimeout(Marquee, timeout);
-
-}
-
-function pauseMarquee() {
-    isPaused = true;
-    clearTimeout(MarqueeTimeout); // Stop any existing timeout
-}
-function resumeMarquee() {
-    isPaused = false;
-    clearTimeout(MarqueeTimeout); // Stop any existing timeout
-}
-
 // Toggle menu depending on screen size
 function toggleMenu() {
     var x = document.getElementById("mobileNav");
@@ -56,17 +17,44 @@ function myFunction() {
     }
 }
 
+// Slideshow
+let slideIndex = 0; // Index of the current slide
+let slides = document.querySelectorAll(".mySlides");
+let slideInterval; // Reference to the interval for automatic slideshow
+const slideDuration = 3000; // Duration for each slide in milliseconds
 
-// Highlight the current page in the navbar
-document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".topnav a");
-    const currentUrl = window.location.pathname;
-
-    navLinks.forEach(link => {
-        if (link.getAttribute("href") === currentUrl.split("/").pop()) {
-            link.classList.add("active");
-        }
+// Function to show the current slide
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? "block" : "none";
     });
+}
+
+// Function to go to the next slide
+function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+}
+
+// Function to start the automatic slideshow
+function startSlideshow() {
+    slideInterval = setInterval(nextSlide, slideDuration);
+}
+
+// Function to pause the slideshow
+function pauseSlideshow() {
+    clearInterval(slideInterval);
+}
+
+// Function to resume the slideshow
+function resumeSlideshow() {
+    startSlideshow();
+}
+
+// Initialize the slideshow
+document.addEventListener("DOMContentLoaded", () => {
+    showSlide(slideIndex); // Show the first slide
+    startSlideshow(); // Start the automatic slideshow
 });
 
 
