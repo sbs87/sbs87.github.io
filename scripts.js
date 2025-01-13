@@ -1,15 +1,12 @@
-// Toggle menu depending on screen size
-function toggleMenu() {
-    var x = document.getElementById("mobileNav");
-    if (x.classList.contains("w3-hide")) {
-        x.classList.remove("w3-hide");
-    } else {
-        x.classList.add("w3-hide");
-    }
-}
+// Slideshow params
+let slideIndex = 0; 
+let slides = document.querySelectorAll(".mySlides");
+let slideInterval;
+const slideDuration = 4000; // Duration for each slide in milliseconds
 
-function myFunction() {
-    var x = document.getElementById("myTopnav");
+// Responsive nav bar, hamburger menu
+function hamburgerShow() {
+    var x = document.getElementById("topNav2");
     if (x.className === "topnav") {
         x.className += " responsive";
     } else {
@@ -17,36 +14,44 @@ function myFunction() {
     }
 }
 
-// Slideshow
-let slideIndex = 0; // Index of the current slide
-let slides = document.querySelectorAll(".mySlides");
-let slideInterval; // Reference to the interval for automatic slideshow
-const slideDuration = 3000; // Duration for each slide in milliseconds
+//
+// Slide show functions
+// 
 
-// Function to show the current slide
+// Show the current slide
 function showSlide(index) {
     slides.forEach((slide, i) => {
         slide.style.display = i === index ? "block" : "none";
     });
 }
 
-// Function to go to the next slide
+// Go to next slide
 function nextSlide() {
     slideIndex = (slideIndex + 1) % slides.length;
     showSlide(slideIndex);
 }
 
-// Function to start the automatic slideshow
+// Go to previous slide
+function prevSlide() {
+    if(slideIndex ==0){
+        slideIndex = slides.length-1;
+    }else{
+        slideIndex = (slideIndex - 1) % slides.length;
+    }
+    showSlide(slideIndex);
+}
+
+// Start the automatic slideshow
 function startSlideshow() {
     slideInterval = setInterval(nextSlide, slideDuration);
 }
 
-// Function to pause the slideshow
+// Pause the slideshow
 function pauseSlideshow() {
     clearInterval(slideInterval);
 }
 
-// Function to resume the slideshow
+// Resume the slideshow
 function resumeSlideshow() {
     startSlideshow();
 }

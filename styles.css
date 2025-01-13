@@ -70,7 +70,6 @@ footer {
 
 
 .button {
-    background-color: #04AA6D; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -89,5 +88,25 @@ footer {
     color: white;
     font-weight: bold;
   }
+
+  .button-red {
+    background-color: #b71c1c; 
+  }
+
+  .button-green {
+    background-color: #4caf50; 
+  }
+
+  .button-blue {
+    background-color: #2196f3; 
+  }
+  .button-purple {
+    background-color: #4a148c; 
+  }
+
+  
+
+
+  
   
   
