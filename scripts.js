@@ -1,57 +1,72 @@
-   // Automatic Slideshow - change image every 4 seconds
-        var myIndex = 0;
-        let isPaused = false;
-        let MarqueeTimeout;
-        let timeout = 5000;
-        Marquee();
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+let isPaused = false;
+let MarqueeTimeout;
+let timeout = 5000;
+Marquee();
 
-        function Marquee() {
+function Marquee() {
 
-            var i;
-            var x = document.getElementsByClassName("mySlides");
+    var i;
+    var x = document.getElementsByClassName("mySlides");
 
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
 
-            myIndex++;
+    myIndex++;
 
 
-            if (myIndex > x.length) { myIndex = 1 }
-            if (isPaused) {
-                return;
-            } else {
-                x[myIndex - 1].style.display = "block";
+    if (myIndex > x.length) { myIndex = 1 }
+    if (isPaused) {
+        return;
+    } else {
+        x[myIndex - 1].style.display = "block";
 
-            }
-            MarqueeTimeout = setTimeout(Marquee, timeout);
+    }
+    MarqueeTimeout = setTimeout(Marquee, timeout);
 
+}
+
+function pauseMarquee() {
+    isPaused = true;
+    clearTimeout(MarqueeTimeout); // Stop any existing timeout
+}
+function resumeMarquee() {
+    isPaused = false;
+    clearTimeout(MarqueeTimeout); // Stop any existing timeout
+}
+
+// Toggle menu depending on screen size
+function toggleMenu() {
+    var x = document.getElementById("mobileNav");
+    if (x.classList.contains("w3-hide")) {
+        x.classList.remove("w3-hide");
+    } else {
+        x.classList.add("w3-hide");
+    }
+}
+
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+
+// Highlight the current page in the navbar
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".topnav a");
+    const currentUrl = window.location.pathname;
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentUrl.split("/").pop()) {
+            link.classList.add("active");
         }
+    });
+});
 
-        function pauseMarquee() {
-            isPaused = true;
-            clearTimeout(MarqueeTimeout); // Stop any existing timeout
-        }
-        function resumeMarquee() {
-            isPaused = false;
-            clearTimeout(MarqueeTimeout); // Stop any existing timeout
-        }
 
-        // Toggle menu depending on screen size
-        function toggleMenu() {
-            var x = document.getElementById("mobileNav");
-            if (x.classList.contains("w3-hide")) {
-                x.classList.remove("w3-hide");
-            } else {
-                x.classList.add("w3-hide");
-            }
-        }
-
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-              x.className += " responsive";
-            } else {
-              x.className = "topnav";
-            }
-          }
