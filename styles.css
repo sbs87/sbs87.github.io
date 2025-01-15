@@ -77,8 +77,6 @@ footer {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    padding: 1em 2em; /* Relative to font size */
-    font-size: 1.2rem; /* Scales with user's settings */
   }
 
   .buttonHover:hover {
