@@ -49,13 +49,16 @@
         <div class="w3-hide-large w3-hide-medium w3-padding-16">
             <div class="w3-row-padding w3-center" style="margin-top:16px;">
                 <div class="w3-third">
-                  <button class="w3-button w3-purple w3-padding-large">Button 1</button>
+                    <button onclick="prevSlide()" class="w3-button button button-purple buttonHover">Previous</button>
                 </div>
                 <div class="w3-third">
-                  <button class="w3-button w3-green w3-padding-large">Button 2</button>
+                    <button onclick="pauseSlideshow()" class="w3-button button button-red buttonHover">Pause</button>
                 </div>
                 <div class="w3-third">
-                  <button class="w3-button w3-blue w3-padding-large">Button 3</button>
+                    <button onclick="resumeSlideshow()" class="w3-button button button-green buttonHover">Resume</button>
+                </div>
+                <div class="w3-third">
+                    <button onclick="nextSlide()" class="w3-button button button-blue buttonHover">Next</button>
                 </div>
               </div>
                  
