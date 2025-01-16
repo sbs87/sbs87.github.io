@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, serif;
     text-align: center;
     background-color: #f4f4f4;
     margin: 0;
@@ -102,6 +102,10 @@ footer {
   }
   .button-purple {
     background-color: #4a148c; 
+  }
+
+  .panel-test{
+        font-size: 2.5em; /* 40px/16=2.5em */
   }
 
   
